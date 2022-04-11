@@ -6,6 +6,7 @@
    "devDependencies": {
       "@types/node": "^16.11.10",
       "ts-node": "10.7.0",
+      "ts-node-dev": "^1.1.8",
       "typescript": "4.5.2"
    },
    "dependencies": {
@@ -14,10 +15,11 @@
       "express": "^4.17.2",
       "pg": "^8.4.0",
       "reflect-metadata": "^0.1.13",
-      "typeorm": "0.3.5"
+      "typeorm": "^0.2.36"
    },
    "scripts": {
       "start": "ts-node src/index.ts --watch",
-      "typeorm": "typeorm-ts-node-commonjs"
+      "dev": "ts-node-dev --transpile-only src/",
+      "typeorm": "ts-node-dev node_modules/.bin/typeorm"
    }
 }
