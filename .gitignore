@@ -1,5 +1,7 @@
 .idea/
 .vscode/
+.gitignore
+.env
 node_modules/
 build/
 tmp/
