@@ -18,6 +18,7 @@
    },
    "scripts": {
       "start": "ts-node src/index.ts --watch",
-      "typeorm": "typeorm-ts-node-commonjs"
+      "dev": "ts-node-dev --transpile-only src/",
+      "typeorm": "ts-node-dev node_modules/.bin/typeorm"
    }
 }

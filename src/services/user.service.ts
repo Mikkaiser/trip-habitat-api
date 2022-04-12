@@ -1,4 +1,4 @@
-import { AppDataSource } from "../database/data-source";
+import { getRepository } from "typeorm";
 import { UserEntity } from "../entities/user.entity";
 
 
@@ -6,7 +6,7 @@ export class UserService {
     public userRepository;
 
     constructor() {
-        this.userRepository = AppDataSource.getRepository(UserEntity)
+        this.userRepository = getRepository(UserEntity)
     }
 
     async getAll() {
