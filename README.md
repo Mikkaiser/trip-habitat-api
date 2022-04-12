@@ -8,4 +8,8 @@ Steps to run this project:
 
 
 ## Create Migrations
-Run -> `typeorm migration:create src/database/migrations/--MIGRATION_NAME--`
+Command: `npm run typeorm migration:create -- -n MIGRATION_NAME`
+
+## Run Migrations
+Command: `npm run typeorm migration:run`
+

@@ -14,11 +14,11 @@
       "express": "^4.17.2",
       "pg": "^8.4.0",
       "reflect-metadata": "^0.1.13",
-      "typeorm": "0.3.5"
+      "typeorm": "^0.2.36"
    },
    "scripts": {
       "start": "ts-node src/index.ts --watch",
       "dev": "ts-node-dev --transpile-only src/",
-      "typeorm": "ts-node-dev node_modules/.bin/typeorm"
+      "typeorm": "ts-node ./node_modules/typeorm/cli.js"
    }
 }
