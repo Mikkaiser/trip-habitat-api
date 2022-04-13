@@ -1,19 +1,18 @@
 import {MigrationInterface, QueryRunner, Table} from "typeorm";
 
-export class CreateUserTable1649718614476 implements MigrationInterface {
+export class CreateDestinationTable1649731786725 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
             new Table({
-                name: 'user',
+                name: 'destination',
                 columns: [
                     {
                         name: 'id',
                         type: 'int',
-                        isUnique: true,
                         isPrimary: true,
-                        generationStrategy: 'increment',
-                        isGenerated: true
+                        isGenerated: true,
+                        generationStrategy: 'increment'
                     },
                     {
                         name: 'name',
@@ -21,37 +20,26 @@ export class CreateUserTable1649718614476 implements MigrationInterface {
                         length: '255'
                     },
                     {
-                        name: 'lastName',
+                        name: 'description',
+                        type: 'text',
+                    },
+                    {
+                        name: 'imagePath',
                         type: 'varchar',
                         length: '255'
-                    },
-                    {
-                        name: 'email',
-                        type: 'varchar',
-                        length: '255',
-                        isPrimary: true
-                    },
-                    {
-                        name: 'password',
-                        type: 'varchar',
-                        length: '255'
-                    },
-                    {
-                        name: 'isAdmin',
-                        default: false,
-                        type: 'boolean',
                     },
                     {
                         name: 'created_at',
                         type: 'timestamp',
                         default: 'now()'
-                    },
+                    }
                 ]
             })
         )
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropTable('user');
+        await queryRunner.dropTable('destination');
     }
+
 }
